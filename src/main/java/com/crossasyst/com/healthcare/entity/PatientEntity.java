@@ -20,7 +20,10 @@ public class PatientEntity {
     @SequenceGenerator(name = "seq_patient_id", sequenceName = "seq_patient_id", initialValue = 10100, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_patient_id")
     private Long patientId;
+
     private String firstName;
+
+    private String middleName;
 
     private String lastName;
 
