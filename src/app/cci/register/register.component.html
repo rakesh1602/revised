@@ -1,0 +1,198 @@
+<div class="heading">Registration</div>
+
+<div>
+<div class="myform">
+    <form [formGroup]="reactiveRegisterForm">
+
+<table>
+
+  <tr>
+  <td colspan="2">
+     <!-- prefix input -->
+     <div class="form-outline mb-4">
+      <label class="form-label" for="prefix">Prefix</label>
+      <!-- <input type="text" id="prefix" class="form-control" prefix="prefix" [value]=rf.prefix formControlName="prefix" [(ngModel)]="userValue.prefix"/>
+    </div>
+
+    <div class="text-danger" *ngIf="prefix.invalid && prefix.dirty">
+      <span *ngIf="prefix.errors!['required']">prefix is required</span> -->
+
+      <select  name="prefix" (change)="prefixFun($event)" class="form-select">
+        <option selected>Select</option>
+        <option *ngFor="let pre of prefix" [value]="pre.prefix">{{ pre.prefix }}</option>
+        </select>
+       </div>
+      </td>
+      </tr>
+    
+
+  <tr>
+    <td>
+
+       <!-- First Name input -->
+       <div class="form-outline mb-4">
+        <label class="form-label" for="firstName">First Name</label>
+        <input type="text" id="firstName" class="form-control" firstName="firstName" [value]=rf.firstName formControlName="firstName" [(ngModel)]="personValue.firstName"/>
+      </div>
+
+      <div class="text-danger" *ngIf="firstName.invalid && firstName.dirty">
+        <span *ngIf="firstName.errors!['required']">First Name is required</span>
+         </div>
+    </td>
+
+    <td>
+       <!-- Last Name input -->
+       <div class="form-outline mb-4">
+        <label class="form-label" for="lastName">Last Name</label>
+        <input type="text" id="lastName" class="form-control" lastName="lastName" [value]=rf.lastName formControlName="lastName" [(ngModel)]="personValue.lastName"/>
+      </div>
+
+      <div class="text-danger" *ngIf="lastName.invalid && lastName.dirty">
+        <span *ngIf="lastName.errors!['required']">Last Name is required</span>
+         </div>
+
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+       <!-- Email input -->
+       <div class="form-outline mb-4">
+        <label class="form-label" for="emailId">Email address</label>
+        <input type="email" id="emailId" class="form-control" emailId="emailId" [value]=ar.emailId formControlName="emailId" [(ngModel)]="accountValue.emailId"/>
+      </div>
+
+      <div class="text-danger" *ngIf="emailId.invalid && emailId.dirty">
+        <span *ngIf="emailId.errors!['required']">Email address is required</span>
+         </div>
+
+    </td>
+
+    <td>
+       <!-- Phone Number input -->
+       <div class="form-outline mb-4">
+        <label class="form-label" for="phoneNumber">Phone number</label>
+        <input type="tel" id="phoneNumber" class="form-control" phoneNumber="phoneNumber" [value]=rf.phoneNumber formControlName="phoneNumber" [(ngModel)]="personValue.phoneNumber"/>
+      </div>
+
+      <div class="text-danger" *ngIf="phoneNumber.invalid && phoneNumber.dirty">
+        <span *ngIf="phoneNumber.errors!['required']">Phone number is required</span>
+         </div>  
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      
+          <!-- DOB input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="dob">DOB</label>
+            <input type="date" id="dob" class="form-control" dob="dob" [value]=rf.dob formControlName="dob" [(ngModel)]="personValue.dob"/>
+          </div>
+  
+          <div class="text-danger" *ngIf="dob.invalid && dob.dirty">
+            <span *ngIf="dob.errors!['required']">DOB is required</span>
+             </div>  
+
+    </td>
+
+    <td>
+      <!-- Gender input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="gender">Gender</label>
+        <!-- <input type="text" id="gender" class="form-control" gender="gender" [value]="genderList" formControlName="gender" [(ngModel)]="userValue.gender"/>
+      </div>
+      <div class="text-danger" *ngIf="gender.invalid && gender.dirty">
+        <span *ngIf="gender.errors!['required']">Gender is required</span> -->
+        
+
+         <select  name="gender" (change)="genderFun($event)" class="form-select">
+          <option selected>Select</option>
+          <option *ngFor="let gen of gender  " [value]="gen.gender">{{ gen.gender }}</option>
+          </select>
+        </div>  
+    </td>
+  </tr>
+  
+    <!-- <tr> -->
+<!-- <td colspan="2"> -->
+
+           <!-- Role input -->
+           <!-- <div class="form-outline mb-4">
+            <label class="form-label" for="role">Role</label> -->
+            <!-- <input type="text" id="role" class="form-control" role="role" [value]=rf.role formControlName="role" [(ngModel)]="userValue.role"/>
+          </div>
+  
+          <div class="text-danger" *ngIf="role.invalid && role.dirty">
+            <span *ngIf="role.errors!['required']">Role is required</span> -->
+          
+
+             <!-- <select name="role" class="form-select" (change)="roleFun($event)">
+              <option selected>Select</option>
+              <option *ngFor="let ro of role  " [value]="ro.role">{{ ro.role}}</option>
+              </select>
+            </div> 
+            </td>  
+            </tr> -->
+
+
+        <!-- Password input -->
+        <!-- <div class="form-outline mb-4">
+          <label class="form-label" for="password">Password</label>
+          <input type="password" id="password" class="form-control" Cpassword="password" [value]=ar.password formControlName="password" [(ngModel)]="account.password"/>
+        </div>
+
+        <div class="text-danger" *ngIf="password.invalid && password.dirty">
+          <span *ngIf="password.errors!['required']">password is required</span> 
+         </div> -->
+
+         <!--Confirm Password input -->
+       <!-- <div class="form-outline mb-4">
+            <label class="form-label" for="Cpasswoed">Confirm Password</label>
+            <input type="password" id="Cpassword" class="form-control"  />
+          </div>  -->
+
+
+      
+        <!-- 2 column grid layout for inline styling -->
+       <!-- <div class="row mb-4">
+          <div class="col d-flex justify-content-center"> -->
+            <!-- Checkbox -->
+         <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form2Example6" checked />
+              <label class="form-check-label" for="form2Example6"> Remember me </label>
+            </div>
+          </div>
+      
+        <div class="col justify-content-center"> -->
+            <!-- Simple link -->
+        <!-- <a  class="">Forgot password?</a>
+          </div>
+        </div> -->
+      
+
+        <tr>
+          <td colspan="2">
+            <!-- Submit button -->
+        <div class="col-12 mt">
+        <button type="submit" (click)="Register()" class="login-btn btn btn-primary login-btn btn-block mb-4" >Register</button>
+        </div>
+          </td>
+        </tr>
+      
+
+
+      </table>  
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>Go Back To  <a [routerLink]="['/login']"> Sign in</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+    
+  
+
+   
+        
+  
