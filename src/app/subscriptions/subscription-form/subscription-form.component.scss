@@ -1,0 +1,58 @@
+.card {
+    background-color: var(--secondry-color);
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+span {
+    margin-left: 40%;
+}
+
+
+mat-card-subtitle {
+    display: block;
+    margin-left: 36%;
+    ;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+mat-form-field {
+    width: 200px;
+    margin: 10px;
+}
+
+mat-label {
+    font-weight: 100;
+}
+
+input.matInput {
+    width: 100%;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    margin-left: 30px;
+}
+
+input.matInput:focus {
+    border-color: rgb(22, 22, 23);
+    /* Change the focus border color as desired */
+}
+
+button {
+    margin-left: 45%;
+    background-color: rgb(234, 203, 147);
+    border-radius: 10px;
+    margin-top: -25px;
+}
+
+.site-logo {
+    border: 1px solid whitesmoke;
+    background-color: darkcyan;
+    color: whitesmoke;
+}

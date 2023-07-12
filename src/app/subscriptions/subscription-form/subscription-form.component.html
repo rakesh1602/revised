@@ -1,0 +1,26 @@
+<div class="card shadow-effect">
+    <div class="card-body">
+        <span class="site-logo">SUBSCRIPTION FORM</span>
+        <mat-card-subtitle class="mt-4">Lorem ipsum dolor sit amet consectetur </mat-card-subtitle>
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Enter your name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email-Id</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                       placeholder="Enter your email id" type="email" name="email">
+                       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                      </mat-error>
+                      <mat-error *ngIf="emailFormControl.hasError('required') || emailFormControl.hasError('touched')">
+                        Email is <strong>required</strong>
+                      </mat-error>
+            </mat-form-field>
+          </p>
+
+          <button mat-button>SUBSCRIBE</button>
+    </div>
+</div>
