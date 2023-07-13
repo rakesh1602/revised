@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bg-secondary-theme p-5 shadow-effect">
+            <div class="text-center text-theme-primary">New Categories</div>
+            <p class="text-center mb-5 text-theme-primary">You can add new category here</p>
+
+            
+                <mat-form-field appearance="outline">
+                    <mat-label>Category</mat-label>
+                    <input name="category" [(ngModel)]="category" matInput placeholder="Add new category here." required="Category name is required." #name="ngModel">
+                </mat-form-field>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">Category name is required.</div>
+          
+        </div>
+
+        <div class="col-md-2 btn btn-theme">
+            <button mat-button color="primary" type="submit" (click)="addCategory(category)" [disabled]="name.invalid">Add Category</button>
+        </div>
+    </div>
+</div>

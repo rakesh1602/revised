@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+    --primary-color: #026467;
+    --secondry-color: #e5f5ea;
+    --body-text-color: #596392;
+    --navbar-footer-color: #f9f9f9
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: var(--body-text-color);
+}
+
+.site-logo{
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: var( --secondry-color);
+    color: var( --primary-color);
+}
+
+.nav-link{
+    color: var(--primary-color);
+}
+
+.shadow-effect{
+    border: none;
+    box-shadow: 0px 0px 33px -10px rgba(71,114,252,0.3);
+}
+
+.bg-theme{
+    background-color: var(--primary-color);
+}
+
+
+.bg-secondary-theme{
+    background-color: var(--secondry-color);
+}
+
+.text-theme-primary{
+    color: var(--primary-color);
+}
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
