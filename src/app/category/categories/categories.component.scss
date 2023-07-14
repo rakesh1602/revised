@@ -23,13 +23,27 @@ input.matInput:focus {
 }
 
 button {
-    background-color: rgb(234, 203, 147);
+   // background-color: rgb(234, 203, 147);
     border-radius: 10px;
     width: 130px;
     border: 1px hidden;
 }
 
+.cat-btn{
+    background-color: rgb(234, 203, 147);
+    border-radius: 10px;
+    width: 130px;
+    border: 1px hidden;
+
+}
+
 .btn{
     margin-left: 50%;
     margin-top: -10.5%;
+}
+
+.edit{
+    width: fit-content;
+    margin-left: 10%;
+    margin-top: 1px;
 }

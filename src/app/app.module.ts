@@ -15,8 +15,13 @@ import { CategoriesComponent } from './category/categories/categories.component'
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import{FormsModule} from '@angular/forms';
+import { AllPostComponent } from './posts/all-post/all-post.component';
+import { NewPostsComponent } from './posts/new-posts/new-posts.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,9 @@ import{FormsModule} from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AllPostComponent,
+    NewPostsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,9 @@ import{FormsModule} from '@angular/forms';
     MatInputModule,
     MatButtonModule,
 
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
 
   ],
   providers: [],

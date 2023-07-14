@@ -1,0 +1,23 @@
+mat-form-field {
+    width: 50%;
+    margin: 10px;
+    height: 60px;
+}
+
+mat-label {
+    font-weight: 100;
+}
+
+input.matInput {
+    width: 100%;
+    padding: 3px;
+    border: 1px solid #110101;
+    border-radius: 4px;
+    outline: none;
+    margin-left: 30px;
+}
+
+input.matInput:focus {
+    border-color: rgb(22, 22, 23);
+    /* Change the focus border color as desired */
+}
