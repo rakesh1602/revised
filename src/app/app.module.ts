@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment.prod';
 import { CategoriesComponent } from './category/categories/categories.component';
+import {StorageModule } from '@angular/fire/storage';
+import {AngularFireStorageModule} from '@angular/fire/compat/storage';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -18,8 +21,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import {AngularEditorModule} from '@kolkov/angular-editor';
 
 import{FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AllPostComponent } from './posts/all-post/all-post.component';
 import { NewPostsComponent } from './posts/new-posts/new-posts.component';
 
@@ -36,17 +41,22 @@ import { NewPostsComponent } from './posts/new-posts/new-posts.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
 
+    
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
 
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularEditorModule
 
   ],
   providers: [],
