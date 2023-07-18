@@ -13,7 +13,7 @@ export class AllPostComponent implements OnInit{
     id: string;
     permalink: string;
     postImgPath: string;
-    category: {category: string };
+    category: {category: string, categoryId: string };
     content: string;
     excerpt: string;
     createdAt: Date;
@@ -29,10 +29,10 @@ export class AllPostComponent implements OnInit{
           title: string;
           permalink: string;
           postImgPath: string;
-          category: { category: string };
+          category: { category: string, categoryId:string };
           content: string;
           excerpt: string;
-          createdAt: { toDate(): Date }; // Assuming createdAt is a Firestore Timestamp
+          createdAt: { toDate(): Date }; 
         };
   
         return {
@@ -41,17 +41,16 @@ export class AllPostComponent implements OnInit{
           permalink: data.permalink,
           postImgPath: data.postImgPath,
           category: data.category,
+          categoryId: data.category.categoryId,
           content: data.content,
           excerpt: data.excerpt,
-          createdAt: data.createdAt.toDate() // Assuming createdAt is a Firestore Timestamp
+          createdAt: data.createdAt.toDate() 
         };
       });
     });
   }
-  
-  
-  
-  
-  
 
+  onDelete(postImgPath:any, id:any){
+    this.postService.deleteImage(postImgPath, id);
+  }
 }

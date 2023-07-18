@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { map } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  constructor(private storage: AngularFireStorage, private fireStore: AngularFirestore, private toaster: ToastrService) { }
+  constructor(private storage: AngularFireStorage, private fireStore: AngularFirestore, private toaster: ToastrService, private router:Router) { }
 
-  uploadImage(selectedImg: any, postData: any) {
+  uploadImage(selectedImg: any, postData: any, formStatus: any, id: any) {
     const filePath = `postIMG/${Date.now()}`;
     console.log(filePath);
 
@@ -22,8 +24,11 @@ export class PostService {
         postData.postImgPath = URL
         console.log(URL)
 
+        if(formStatus == 'Edit'){
+          this.updateData(id,postData)
+        }else{
         this.saveData(postData)
-
+        }
       })
     })
   }
@@ -33,6 +38,7 @@ export class PostService {
     this.fireStore.collection('posts').add(postData).then(docref=>{
       console.log(docref)
       this.toaster.success("Posts added successfully.")
+      this.router.navigate(['/posts'])
     })
   }
 
@@ -49,4 +55,30 @@ export class PostService {
       })
     )
   }
+
+ 
+  loadEditData(id: any) {
+    return this.fireStore.doc(`/posts/${id}`).valueChanges();
+  }
+
+  updateData(id: any, postData: any){
+    this.fireStore.doc(`posts/${id}`).update(postData).then(()=>{
+      this.toaster.success("Data updated successfully");
+      this.router.navigate(['/posts']);
+    })
+  }
+
+  deleteImage(postImgPath: any, id: any){
+    this.storage.storage.refFromURL(postImgPath).delete().then(()=>{
+      this.deleteData(id)
+      console.log("Image delete successfully.")
+    })
+  }
+
+  deleteData(id: any){
+    this.fireStore.doc(`posts/${id}`).delete().then(()=>{
+      this.toaster.warning("Post deleted successfully.")
+    })
+  }
+  
 }
