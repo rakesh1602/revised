@@ -12,8 +12,8 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment.prod';
 import { CategoriesComponent } from './category/categories/categories.component';
-import {StorageModule } from '@angular/fire/storage';
 import {AngularFireStorageModule} from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -27,6 +27,7 @@ import{FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AllPostComponent } from './posts/all-post/all-post.component';
 import { NewPostsComponent } from './posts/new-posts/new-posts.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NewPostsComponent } from './posts/new-posts/new-posts.component';
     DashboardComponent,
     CategoriesComponent,
     AllPostComponent,
-    NewPostsComponent
+    NewPostsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +48,8 @@ import { NewPostsComponent } from './posts/new-posts/new-posts.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
-
-    
+    AngularFireAuthModule,
+        
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,

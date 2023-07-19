@@ -80,5 +80,11 @@ export class PostService {
       this.toaster.warning("Post deleted successfully.")
     })
   }
+
+  markAsFeatured(id: any, featuredData: any){
+    this.fireStore.doc(`posts/${id}`).update(featuredData).then(()=>{
+      this.toaster.info("Featured updated.")
+    })
+  }
   
 }
