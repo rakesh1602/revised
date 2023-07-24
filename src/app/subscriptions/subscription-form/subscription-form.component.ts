@@ -35,4 +35,7 @@ export class SubscriptionFormComponent {
 
   matcher = new MyErrorStateMatcher();
 
+  email!: any
+  name!: any
+
 }

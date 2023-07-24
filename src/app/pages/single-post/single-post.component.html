@@ -2,25 +2,15 @@
     <div class="row">
         <div class="col-md-9">
             <div class="card shadow-effect">
-                <img src="https://images.pexels.com/photos/16734808/pexels-photo-16734808/free-photo-of-wood-landscape-man-person.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" class="card-img-top img-fluid">
+                <img src="{{postData?.postImgPath}}" alt="" class="card-img-top img-fluid">
                 <div class="card-body">
-                    <small class="bg-light text-danger text-center"> Design </small>
-                    <small class="bg-light_text-success text-center ml-2"> Featured </small>
-                    <small class="bg-light text-info text-center ml-2"> Views</small>
-                    <small class="bg-light text-warningtext-center ml-2"> LAST UPDATED</small>
+                    <small class="bg-light text-danger text-center"> {{postData?.category.category}} </small>
+                    <small class="bg-light_text-success text-center ml-3"> Featured</small>
+                    <small class="bg-light text-info text-center ml-3"> Views: {{postData?.views}}</small>
+                    <small class="bg-light text-warning text-center ml-3"> Last Updated - {{postData.createdAt.toMillis() | date}}</small>
 
-                    <h1 class="mt-3 mb-4">HOW TO START A BLOG IN 2021 EDITED NEW CATEGORY</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem blanditiis eligendi, 
-                        maxime aut omnis illo magnam earum voluptas, quos, soluta corporis modi minus quaerat! 
-                        
-                        Perferendis illo earum, adipisci voluptatem nam molestias iste atque id maxime repellendus mollitia
-                         voluptatum repellat cumque impedit. Labore quidem sapiente cupiditate quia nesciunt, fuga minus,
-                         
-                         voluptatem vitae culpa asperiores nobis nisi, aperiam totam est autem eaque vel ratione non! 
-                         Quod quidem ad officia quibusdam voluptates autem distinctio veniam numquam! Voluptatem debitis, 
-                         
-                         voluptates eaque fuga repellendus at corporis. Rerum, nesciunt ducimus sapiente non vitae consequuntur
-                         vero, culpa dolorem eveniet mollitia deserunt ratione corporis alias qui tenetur quos.</p>
+                    <h1 class="mt-3 mb-4">{{ postData?.title | uppercase }}</h1>
+                    <p [innerHTML]="postData?.content"></p>
                 </div>
             </div>
 
@@ -28,9 +18,8 @@
             <app-comment-list></app-comment-list>
 
         </div>
-        <div class="col-md-3">
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
+        <div class="col-md-3" *ngFor="let post of similarPost">
+            <app-post-card [postData]="post"></app-post-card>
         </div>
     </div>
 </div>
